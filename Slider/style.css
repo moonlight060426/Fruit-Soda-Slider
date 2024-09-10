@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    overflow: hidden;
+}
+
+div.carousel {
+    height: 100vh;
+}
+
+div.img-box {
+    position: absolute;
+    bottom: -960px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1600px;
+    height: 1600px;
+}
+
+div.img-box .img-list {
+    height: inherit;
+    transform: rotate(90deg);
+}
+
+div.img-list .img-slider {
+    height: inherit;
+    display: flex;
+    align-items: center;
+    transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+div.img-slider .img-item {
+    position: absolute;
+    left: 0;
+    transform: rotate(calc(360deg / 4 * var(--i)));
+    transform-origin: 800px;
+}
+
+div.img-item img {
+    transform: rotate(-90deg);
+    filter: drop-shadow(0 0 10px rgba(0,0,0, .1));
+}
+
+div.img-item.fruit img{
+    transform: rotate(-90deg) translateY(-30%);
+    scale: 0;
+    transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+    animation: float-fruit 4s ease-in-out infinite;
+}
+
+div.img-item.fruit.active img {
+    scale: 1;
+    transition-delay: .1s;
+}
+
+@keyframes float-fruit {
+    0% {
+        translate: 0;
+    }
+
+    50% {
+        translate: -20px;
+    }
+
+    100% {
+        translate: 0;
+    }
+}
+
+div.info-box {
+    position: absolute;
+    right: 8%;
+    bottom: 5%;
+    width: 350px;
+    height: 150px;
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+div.info-box .info-slider {
+    /* border: 2px solid green; */
+    transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+div.info-slider .info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    height: 150px;
+}
+
+div.info-item h2 {
+    font-size: 24px;
+    margin-bottom: 6px;
+}
+
+div.navigation {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    z-index: 100;
+}
+
+div.navigation span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, .2);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 55px;
+    color: #fff;
+}
+
+div.large-text {
+    position: absolute;
+    left: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 700px;
+    /* border: 2px solid red; */
+    display: flex;
+    justify-content: center;
+    margin-top: -10px;
+}
+
+div.large-text h2 {
+    font-size: 160px;
+    color: rgba(255, 255, 255, .4);
+    writing-mode: vertical-lr;
+    text-orientation: upright;
+    letter-spacing: -90px;
+    user-select: none;
+}
+
+div.bg-box .bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: .5s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+div.bg-box .bg.active {
+    opacity: 1;
+}
+
+div.bg-box .bg::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    height: 800px;
+    background: rgba(255, 255, 255, .8);
+    border-radius: 50%;
+    filter: blur(200px);
+}
+
+div.bg-box .bg:nth-child(1) {
+    background-color: #55a0f0;
+}
+
+div.bg-box .bg:nth-child(2) {
+    background-color: #df9e7d;
+}
+
+div.bg-box .bg:nth-child(3) {
+    background-color: #6cc680
+}
+
+div.bg-box .bg:nth-child(4) {
+    background-color: #e9a5b2;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 1200px) {
+    div.img-box {
+        width: 1000px;
+        height: 1000px;
+        bottom: -600px;
+    }
+
+    div.img-slider .img-item {
+        transform-origin: 500px;
+    }
+
+    div.info-box {
+        right: 5%;
+        bottom: 10%;
+        width: 280px;
+        height: 120px;
+    }
+
+    div.info-item h2 {
+        font-size: 20px;
+    }
+
+    div.navigation span {
+        width: 60px;
+        height: 60px;
+        font-size: 40px;
+    }
+
+    div.large-text {
+        left: 10%;
+        top: 50%;
+        height: 500px;
+    }
+
+    div.large-text h2 {
+        font-size: 120px;
+        letter-spacing: -70px;
+    }
+
+    div.bg-box .bg::before {
+        width: 600px;
+        height: 600px;
+    }
+}

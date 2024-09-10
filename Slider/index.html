@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Carousel using HTML CSS & Javascript | Codehal - Carousel 3</title>
+    <link rel="stylesheet" href="./style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="carousel">
+
+        <div class="bg-box">
+            <div class="bg active"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+            <div class="bg"></div>
+        </div>
+
+        <div class="img-box">
+            <div class="img-list">
+                <div class="img-slider">
+                    <div class="img-item fruit active" style="--i:0;">
+                        <img src="./images/fruit1.png">
+                    </div>
+                    <div class="img-item fruit" style="--i:1;">
+                        <img src="./images/fruit2.png">
+                    </div>
+                    <div class="img-item fruit" style="--i:2;">
+                        <img src="./images/fruit3.png">
+                    </div>
+                    <div class="img-item fruit" style="--i:3;">
+                        <img src="./images/fruit4.png">
+                    </div>
+
+                    <div class="img-item" style="--i:0;">
+                        <img src="./images/can1.png">
+                    </div>
+                    <div class="img-item" style="--i:1;">
+                        <img src="./images/can2.png">
+                    </div>
+                    <div class="img-item" style="--i:2;">
+                        <img src="./images/can3.png">
+                    </div>
+                    <div class="img-item" style="--i:3;">
+                        <img src="./images/can4.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="info-box">
+            <div class="info-slider">
+                <div class="info-item">
+                    <h2>Blueberry</h2>
+                    <p>This drink is a blueberry-flavored drink with a clean and sweet taste, allowing you to feel the
+                        refreshing and cooling sensation of blueberries at the same time.</p>
+                </div>
+                <div class="info-item">
+                    <h2>Orange</h2>
+                    <p>This drink is an orange flavored drink. It has a sweet and refreshing taste, and you can feel the
+                        rich scent of orange. Oranges are rich in vitamin C and are good for skin health.</p>
+                </div>
+                <div class="info-item">
+                    <h2>Green Apple</h2>
+                    <p>This drink is an apple flavored drink. The refreshing and sweet apple taste and aroma will give
+                        you a refreshing feeling. Apples are rich in vitamins and minerals and are good for your health.
+                    </p>
+                </div>
+                <div class="info-item">
+                    <h2>Strawberry</h2>
+                    <p>This drink is a strawberry flavored drink. You can feel the scent of strawberries with a sweet
+                        and refreshing strawberry taste. Strawberries are rich in antioxidants and are effective in
+                        preventing aging.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="large-text">
+            <h2>과 일 소 다</h2>
+        </div>
+
+        <div class="navigation">
+            <span class="prev-btn">
+                <i class='bx bx-chevron-left'></i>
+            </span>
+            <span class="next-btn">
+                <i class='bx bx-chevron-right'></i>
+            </span>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
